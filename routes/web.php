@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 
-Route::middleware('publication.limit')
+Route::middleware(['auth:sanctum', 'publication.limit'])
     ->get('/create/publication', [PublicationController::class, 'showEditPublicationForm'])
     ->name('publication.showEditForm');
