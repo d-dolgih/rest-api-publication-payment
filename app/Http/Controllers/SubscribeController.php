@@ -24,7 +24,7 @@ class SubscribeController extends Controller
     public function getUserSubscribe()
     {
         $user = Auth::user()->load('subscribe', 'publications');
-        return response()->json($user->subscribes);
+        return response()->json($user->subscribe);
     }
 
 }
